@@ -106,7 +106,11 @@ export default function App() {
       const future = []
       const now = nowMs()
       for (const item of scheduledRef.current) {
-        if (item.atMs <= now) due.push(item) else future.push(item)
+if (item.atMs <= now) {
+  due.push(item);
+} else {
+  future.push(item);
+}
       }
       scheduledRef.current = future
 
